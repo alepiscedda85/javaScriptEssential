@@ -46,10 +46,15 @@ function editbook(index) {
     showbooks(); // Aggiorna la lista
   }
 
-  
+
   function clearInputs() {
     document.getElementById('bookName').value = '';
     document.getElementById('authorName').value = '';
     document.getElementById('bookDescription').value = '';
     document.getElementById('pagesNumber').value = '';
 }
+
+   function deleteBook(index) {
+    books.splice(index, 1); // Rimuovi l'entrata vecchia
+    showbooks(); // Aggiorna la lista
+   }
