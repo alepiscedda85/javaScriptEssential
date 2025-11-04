@@ -33,6 +33,8 @@ startTime = new Date().getTime();
             var typedWords = userTypedText.split(/\s+/).filter(function (word) {
                 return word !== "";
             }).length;
+            
+            var typedWordsLength = userTypedText.length;
 
             var wpm = 0; // Valore predefinito
 
@@ -43,6 +45,7 @@ startTime = new Date().getTime();
             // Visualizza i risultati
             var outputDiv = document.getElementById("output");
             outputDiv.innerHTML = "<h2>Risultati del Test di Digitazione:</h2>" +
+                "<p>Lunghezza Totale: " + typedWordsLength + "</p>"  +
                 "<p>Parole Digitati: " + typedWords + "</p>" +
                 "<p>Tempo Trascorso: " + timeElapsed.toFixed(2) + " secondi</p>" +
                 "<p>Parole al Minuto (WPM): " + wpm + "</p>";
