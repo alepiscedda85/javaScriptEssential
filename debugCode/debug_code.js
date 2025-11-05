@@ -6,10 +6,12 @@
     // Check if inputs are valid numbers
     if (!isNaN(num1) && !isNaN(num2)) {
     // Perform the operation
-                    let result = multiply(num1, num2);
+                    let result = multiply(num1, num2); sum(num1, num2); sottrai(num1, num2); divide (num1, num2);
 
                     // Display the result
-                    displayResult(result);
+                    displayResult(
+                        `Moltiplicazione: ${multiply(num1, num2)}, Somma: ${sum(num1, num2)}, Sottrazione: ${sottrai(num1, num2)}, Divisione: ${divide(num1, num2)}`
+                    );
                 } else {
                     displayResult('Please enter valid numbers');
                 }
@@ -22,6 +24,31 @@
                 // Multiply the numbers
                 return a * b;
             }
+
+            function sum(a, b) {
+                // Introduce a debugger statement to pause execution
+                debugger;
+
+                // Multiply the numbers
+                return a + b;
+            }
+
+            function sottrai(a, b) {
+                // Introduce a debugger statement to pause execution
+                debugger;
+
+                // Multiply the numbers
+                return a - b;
+            }
+
+            function divide(a, b) {
+                // Introduce a debugger statement to pause execution
+                debugger;
+
+                // Multiply the numbers
+                return a / b;
+            }
+
 
             function displayResult(result) {
                 // Display the result in the paragraph element
