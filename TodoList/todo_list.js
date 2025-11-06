@@ -2,6 +2,7 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const clearCompletedBtn = document.getElementById("clearCompletedBtn");
+const eraseAllBtn = document.getElementById("eraseAllBtn");
 
 //Dichiarazione di array vuoto per immagazzinare i dati. 
 let tasks = [];
@@ -37,5 +38,13 @@ function clearCompletedTasks() {
             displayTasks();
         }
 
+//Funzione per cancellare il task completato nell'array
+function eraseTasks() {
+    tasks = []; // svuota l’array
+    displayTasks(); // aggiorna la UI
+  }
+
+// Inserimento listener per i bottoni
 addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
+eraseAllBtn.addEventListener("click", eraseTasks );
