@@ -1,20 +1,20 @@
 // Crea la richiesta AJAX
-var xhr_health = new XMLHttpRequest();
-var url = './health_article.json';
+var xhr_news = new XMLHttpRequest();
+var url = './news_article.json';
 
-// Configura la richiesta
-xhr_health.open('GET', url, true);
-xhr_health.responseType = 'json';
+// Configura richiesta
+xhr_news.open('GET', url, true);
+xhr_news.responseType = 'json';
 
 // Callback al completamento
-xhr_health.onload = function() {
-  var articles = xhr_health.response.articles; // dati JSON
-  var articlesDiv = document.getElementById('articles'); // contenitore HTML
+xhr_news.onload = function() {
+  var articles = xhr_news.response.articles; // dati JSON
+  var newsContainer = document.getElementById('news'); // contenitore principale
 
   // Ciclo articoli
   articles.forEach(function(article) {
     var articleDiv = document.createElement('div');
-    articleDiv.classList.add('article');
+    articleDiv.classList.add('news-item');
 
     // Titolo e descrizione
     var title = document.createElement('h2');
@@ -50,9 +50,9 @@ xhr_health.onload = function() {
     articleDiv.appendChild(benefitsHeader);
     articleDiv.appendChild(benefitsList);
 
-    articlesDiv.appendChild(articleDiv);
+    newsContainer.appendChild(articleDiv);
   });
 };
 
 // Invia la richiesta
-xhr_health.send();
+xhr_news.send();
